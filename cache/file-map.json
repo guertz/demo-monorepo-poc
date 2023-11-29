@@ -1,0 +1,46 @@
+{
+  "version": "6.0",
+  "nxVersion": "17.1.3",
+  "deps": {
+    "@nx/jest": "17.1.3",
+    "@nx/react": "17.1.3",
+    "@nx/webpack": "17.1.3",
+    "@nx/workspace": "17.1.3",
+    "nx": "17.1.3"
+  },
+  "pathMappings": {},
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "projectFileMap": {},
+    "nonProjectFiles": [
+      {
+        "file": ".editorconfig",
+        "hash": "5443105041930014821"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "16877376182141465221"
+      },
+      {
+        "file": ".vscode/extensions.json",
+        "hash": "3833545590435012078"
+      },
+      {
+        "file": "README.md",
+        "hash": "9458610946337310776"
+      },
+      {
+        "file": "nx.json",
+        "hash": "5053758665487053718"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "13808998517119040544"
+      },
+      {
+        "file": "package.json",
+        "hash": "16634189464750146289"
+      }
+    ]
+  }
+}

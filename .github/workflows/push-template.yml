@@ -1,0 +1,30 @@
+name: Push Template
+on: [workflow_dispatch]
+# on:
+#   push:
+#     paths:
+#       - .coder/template/**
+jobs:
+  coder-push-template:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      - name: Install Coder
+        run: |
+          wget https://github.com/coder/coder/releases/download/v2.4.0/coder_2.4.0_linux_amd64.deb
+
+          sudo dpkg -i coder_2.4.0_linux_amd64.deb
+
+      - name: Push template
+        env:
+          CODER_URL: ${{ secrets.CODER_URL }}
+          CODER_SESSION_TOKEN: ${{ secrets.CODER_SESSION_TOKEN }}
+          LINODE_TOKEN: ${{ secrets.LINODE_TOKEN }}
+        run: |
+          coder templates push --yes "demo-monorepo-poc" \
+            --directory ".coder/template" \
+            --name $(git rev-parse --short HEAD) \
+            --var "linode_token=$LINODE_TOKEN" \
+            --var "agent_url=$CODER_URL"
